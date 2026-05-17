@@ -1,0 +1,57 @@
+/* Background */
+
+.stApp {
+    background: linear-gradient(135deg, #0B1120, #020617);
+    color: white;
+}
+
+/* Glass cards */
+
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Glow buttons */
+
+.stButton>button {
+    background: linear-gradient(90deg,#00E0FF,#6C63FF);
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:10px 25px;
+    font-weight:600;
+    box-shadow:0 0 10px rgba(0,224,255,0.6);
+}
+
+/* Titles */
+
+h1,h2,h3 {
+    color:#00E0FF;
+}
+
+h1 {
+    text-align:center;
+    text-shadow:0 0 20px #00E0FF;
+}
+
+h3 {
+    text-shadow:0 0 10px #00E0FF;
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow:0 0 25px rgba(0,224,255,0.6);
+}

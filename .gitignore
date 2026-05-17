@@ -1,0 +1,14 @@
+# AI models
+*.pth
+
+# Temp outputs
+backend/temp/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# VS Code
+.vscode/
