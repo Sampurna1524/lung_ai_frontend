@@ -5,4 +5,7 @@ Pillow
 plotly
 requests
 reportlab
-
+torch
+torchvision
+fastapi
+uvicorn
