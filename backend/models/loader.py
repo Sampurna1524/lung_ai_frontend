@@ -116,18 +116,29 @@ def load_models():
     # Ensemble
     # =========================
     try:
-        ensemble = torch.load(
-            os.path.join(MODEL_DIR, "ensemble.pth"),
-            map_location=DEVICE
+
+        ensemble = models.efficientnet_v2_s()
+
+        ensemble.classifier[1] = nn.Linear(
+            ensemble.classifier[1].in_features,
+            2
         )
 
-        if hasattr(ensemble, "eval"):
-            ensemble.eval()
+        ensemble.load_state_dict(
+            torch.load(
+                os.path.join(MODEL_DIR, "ensemble.pth"),
+                map_location=DEVICE
+            )
+        )
+
+        ensemble.to(DEVICE).eval()
 
         MODELS["ensemble"] = ensemble
+
         print("✅ Loaded: ensemble")
 
     except Exception as e:
+
         print("❌ Ensemble failed:", e)
 
     print("📦 FINAL LOADED MODELS:", list(MODELS.keys()))
