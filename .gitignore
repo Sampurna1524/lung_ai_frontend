@@ -1,9 +1,5 @@
 # AI models
-best_swav_model.pth
-best_vit.pth
-effnet_BEST (2).pth
-ensemble.pth
-mobilenetv2_best.pth
+*.pth
 
 # Temp outputs
 backend/temp/
