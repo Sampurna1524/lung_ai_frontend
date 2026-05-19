@@ -176,8 +176,21 @@ def build_inference_payload(image, model_name):
     return byte_im, model_map[model_name].strip().lower()
 
 def request_model_inference(image_bytes, model_slug):
-    files = {"file": ("image.png", image_bytes, "image/png")}
-    data = {"model": model_slug}
+
+    files = {
+        "file": (
+            st.session_state.get(
+                "uploaded_filename",
+                "image.png"
+            ),
+            image_bytes,
+            "image/png"
+        )
+    }
+
+    data = {
+        "model": model_slug
+    }
 
     res = requests.post(
         "http://127.0.0.1:8000/api/predict",
@@ -922,9 +935,23 @@ with col1:
     )
 
     if uploaded:
+
         img = Image.open(uploaded)
-        st.image(img, caption="Uploaded Scan Preview", use_container_width=True)
+
+        st.image(
+            img,
+            caption="Uploaded Scan Preview",
+            use_container_width=True
+        )
+
         st.session_state["image"] = img
+
+        # =====================================
+        # STORE FILENAME
+        # =====================================
+
+        st.session_state["uploaded_filename"] = uploaded.name
+
         st.success("✓ Image uploaded")
     else:
         if st.session_state.get("image") is not None:

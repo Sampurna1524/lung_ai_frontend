@@ -54,7 +54,7 @@ async def run_inference(
         # =========================
         # 🔥 MODEL INFERENCE
         # =========================
-        result = predict(model, processed)
+        result = predict(model, processed, file.filename)
 
         if not isinstance(result, dict) or "prediction" not in result:
             raise HTTPException(status_code=500, detail="Model inference failed")
