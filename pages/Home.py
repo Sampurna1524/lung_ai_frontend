@@ -161,6 +161,7 @@ def build_inference_payload(image, model_name):
     model_map = {
         "EfficientNetV2-S": "efficientnet",
         "Vision Transformer": "vit",
+        "MobileNetV2": "mobilenet",
         "ResNet18 BYOL": "byol",
         "SwAV ResNet18": "swav",
         "Ensemble Model": "ensemble"
@@ -971,6 +972,7 @@ with col3:
     model_options = [
         "EfficientNetV2-S",
         "Vision Transformer",
+        "MobileNetV2",
         "ResNet18 BYOL",
         "SwAV ResNet18",
         "Ensemble Model"
@@ -991,6 +993,7 @@ with col3:
     st.markdown("**Models:**")
     st.caption("• EfficientNetV2-S - Fast & accurate")
     st.caption("• ViT - Transformer-based")
+    st.caption("• MobileNetV2 - Lightweight & fast")
     st.caption("• BYOL - Self-supervised")
     st.caption("• SwAV - Contrastive learning")
     st.caption("• Ensemble - Combined models")
