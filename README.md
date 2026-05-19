@@ -1,4 +1,4 @@
-How to start:
+*How to start:*
 1. Activate the venv (if u want)
 2. Download the requirements
 3. Open two terminals
