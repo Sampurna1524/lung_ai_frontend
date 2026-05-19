@@ -35,10 +35,10 @@ if "logged_in" not in st.session_state:
 if "username" not in st.session_state:
     st.session_state["username"] = ""
 
-# REDIRECT TO LOGIN IF NOT AUTHENTICATED
+# REDIRECT TO LOGIN IF NOT ITS NOT AUTHENTICATED
 
 if not st.session_state["logged_in"]:
-    st.switch_page("../login.py")
+    st.switch_page("login.py")
 
 # 🔥 Backend health check
 try:
