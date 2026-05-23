@@ -42,7 +42,10 @@ if not st.session_state["logged_in"]:
 
 # 🔥 Backend health check
 try:
-    res = requests.get("http://127.0.0.1:8000/health", timeout=2)
+    res = requests.get(
+        "https://lung-ai-frontend.onrender.com/health",
+        timeout=10
+    )
     if res.status_code == 200:
         st.success("🟢 Backend Connected")
     else:
@@ -193,7 +196,7 @@ def request_model_inference(image_bytes, model_slug):
     }
 
     res = requests.post(
-        "http://127.0.0.1:8000/api/predict",
+        "https://lung-ai-frontend.onrender.com/predict",
         files=files,
         data=data,
         timeout=30
