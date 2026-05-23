@@ -1,11 +1,12 @@
-streamlit
-numpy
-opencv-python
-Pillow
-plotly
-requests
-reportlab
-torch
-torchvision
 fastapi
 uvicorn
+numpy
+opencv-python-headless
+Pillow
+requests
+python-multipart
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.2.2+cpu
+torchvision==0.17.2+cpu
